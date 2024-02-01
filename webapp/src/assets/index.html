@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="import" href="../../Header/index.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container" style="margin: 0 auto">
+        <header
+          class="py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px]"
+        >
+          <div
+            class="flex flex-wrap items-center justify-between gap-5 relative"
+          >
+            <a href="javascript:void(0)"
+              ><img
+                src="../../Header/assets/logo.png"
+                alt="logo"
+                class="w-36"
+              />
+            </a>
+            <div class="flex lg:order-1 max-sm:ml-auto">
+              <button
+                class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+              >
+                Đăng nhập
+              </button>
+              <button
+                class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff] ml-3"
+              >
+                Đăng kí
+              </button>
+              <button id="toggle" class="lg:hidden ml-7">
+                <svg
+                  class="w-7 h-7"
+                  fill="#000"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <ul
+              id="collapseMenu"
+              class="lg:!flex max-lg:hidden max-lg:w-full lg:space-x-10 max-lg:space-y-4 max-lg:my-4"
+            >
+              <li class="max-lg:border-b max-lg:py-2">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-blue-600 text-[15px] font-bold text-gray-600 block"
+                  >Home</a
+                >
+              </li>
+              <li class="group max-lg:border-b max-lg:py-2 relative">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold lg:hover:fill-[#007bff] block"
+                  >Pages<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16px"
+                    height="16px"
+                    class="ml-1 inline-block"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                      data-name="16"
+                      data-original="#000000"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="absolute hidden group-hover:block shadow-lg bg-white px-6 pb-4 pt-6 space-y-3 lg:top-5 max-lg:top-8 -left-6 min-w-[250px] z-50"
+                >
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >About</a
+                    >
+                  </li>
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Contact</a
+                    >
+                  </li>
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Login</a
+                    >
+                  </li>
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Sign up</a
+                    >
+                  </li>
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Blog</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="group max-lg:border-b max-lg:py-2 relative">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold lg:hover:fill-[#007bff] block"
+                  >Blog<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16px"
+                    height="16px"
+                    class="ml-1 inline-block"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                      data-name="16"
+                      data-original="#000000"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="absolute hidden group-hover:block shadow-lg bg-white px-6 pb-4 pt-6 space-y-3 lg:top-5 max-lg:top-8 -left-6 min-w-[250px]"
+                >
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Foods</a
+                    >
+                  </li>
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Sale</a
+                    >
+                  </li>
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Marketing</a
+                    >
+                  </li>
+                  <li class="border-b py-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                      >Investment</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="max-lg:border-b max-lg:py-2">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                  >Team</a
+                >
+              </li>
+              <li class="max-lg:border-b max-lg:py-2">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                  >About</a
+                >
+              </li>
+              <li class="max-lg:border-b max-lg:py-2">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-[#007bff] text-gray-600 text-[15px] font-bold block"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </header>
+      </div>
+    </header>
+    <div class="content">
+      <div class="introduce">
+        <div class="flex">
+          <div class="left text-white">
+            <p class="font-bold uppercase">workflow</p>
+            <p class="font-bold uppercase">
+              Nền tảng quản trị và điều hành doanh nghiệp toàn diện
+            </p>
+            <div class="flex">
+              <div>
+                <ul style="padding-top: 20px">
+                  <li class="text-20 text-white">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Phù hợp với nhiều lĩnh vực
+                  </li>
+                  <li class="text-20 text-white">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Chi phí hợp lý
+                  </li>
+                  <li class="text-20 text-white">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Được 3500+ doanh nghiệp tin dùng
+                  </li>
+                </ul>
+                <div>
+                  <button class="hv__button">
+                    Đăng kí nhận tư vấn
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                      <path
+                        clip-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <img src="./Banner-WorkFlow.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Hệ điều hành doanh nghiệp -->
+      <div class="benefit">
+        <div class="benefit__des">
+          <p class="uppercase text-35 font-bold">
+            Hệ điều hành doanh nghiệp tổng thể 4.0
+          </p>
+          <p class="text-25 font-semibold">One app - One Platform</p>
+        </div>
+        <div class="flex all__benefit">
+          <div class="my__benefit card__hv">
+            <div>
+              <img src="./Benefit/benefit1.png" alt="" />
+            </div>
+            <div>
+              <p class="text-25 font-bold">One SME</p>
+            </div>
+            <div>
+              <p class="uppercase text-15">
+                Bộ giải pháp chuyển đổi số toàn diện cho SME
+              </p>
+            </div>
+            <div>
+              <button class="hv__button">
+                Xem chi tiết
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="my__benefit card__hv">
+            <div>
+              <img src="./Benefit/benefit1.png" alt="" />
+            </div>
+            <div>
+              <p class="text-25 font-bold">One SME</p>
+            </div>
+            <div>
+              <p class="uppercase text-15">
+                Bộ giải pháp chuyển đổi số toàn diện cho SME
+              </p>
+            </div>
+            <div>
+              <button class="hv__button">
+                Xem chi tiết
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="my__benefit card__hv">
+            <div>
+              <img src="./Benefit/benefit1.png" alt="" />
+            </div>
+            <div>
+              <p class="text-25 font-bold">One SME</p>
+            </div>
+            <div>
+              <p class="uppercase text-15">
+                Bộ giải pháp chuyển đổi số toàn diện cho SME
+              </p>
+            </div>
+            <div>
+              <button class="hv__button">
+                Xem chi tiết
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="my__benefit card__hv">
+            <div>
+              <img src="./Benefit/benefit1.png" alt="" />
+            </div>
+            <div>
+              <p class="text-25 font-bold">One SME</p>
+            </div>
+            <div>
+              <p class="uppercase text-15">
+                Bộ giải pháp chuyển đổi số toàn diện cho SME
+              </p>
+            </div>
+            <div>
+              <button class="hv__button">
+                Xem chi tiết
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Benefit -->
+      <!-- Why us -->
+      <div class="why">
+        <div class="all__reason">
+          <div class="reason__des">
+            <p class="uppercase text-35 font-semibold">Tại sao nên</p>
+            <p class="text-35 font-bold uppercase">Sử dụng workflow</p>
+          </div>
+          <div class="flex">
+            <div
+              class="w-100"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  rgba(2, 0, 36, 1) 0%,
+                  rgba(209, 209, 237, 1) 0%,
+                  rgba(0, 212, 255, 1) 100%
+                );
+              "
+            >
+              <div class="my__reason flex">
+                <section id="card1" class="card__reason">
+                  <div
+                    class="flex"
+                    style="flex-direction: column; padding: 10px 20px"
+                  >
+                    <img src="./Reason/tichhop.png" alt="" />
+                    <p class="font-bold text-20" style="margin-top: 10px">
+                      Khả năng tích hợp
+                    </p>
+                  </div>
+
+                  <div class="card__reason__content">
+                    <p class="card__reason__title">
+                      Khả năng tích hợp và mở rộng không giới hạn
+                    </p>
+                    <p class="card__reason__description">
+                      WorkFlow API cho phép các nền tảng, hệ thống khác kết nối
+                      tới FastWork thông qua FastWork API
+                    </p>
+                  </div>
+                </section>
+                <section id="card1" class="card__reason">
+                  <div
+                    class="flex"
+                    style="flex-direction: column; padding: 10px 20px"
+                  >
+                    <img src="./Reason/tichhop.png" alt="" />
+                    <p class="font-bold text-20" style="margin-top: 10px">
+                      Khả năng tích hợp
+                    </p>
+                  </div>
+
+                  <div class="card__reason__content">
+                    <p class="card__reason__title">
+                      Khả năng tích hợp và mở rộng không giới hạn
+                    </p>
+                    <p class="card__reason__description">
+                      WorkFlow API cho phép các nền tảng, hệ thống khác kết nối
+                      tới FastWork thông qua FastWork API
+                    </p>
+                  </div>
+                </section>
+                <section id="card1" class="card__reason">
+                  <div
+                    class="flex"
+                    style="flex-direction: column; padding: 10px 20px"
+                  >
+                    <img src="./Reason/tichhop.png" alt="" />
+                    <p class="font-bold text-20" style="margin-top: 10px">
+                      Khả năng tích hợp
+                    </p>
+                  </div>
+
+                  <div class="card__reason__content">
+                    <p class="card__reason__title">
+                      Khả năng tích hợp và mở rộng không giới hạn
+                    </p>
+                    <p class="card__reason__description">
+                      WorkFlow API cho phép các nền tảng, hệ thống khác kết nối
+                      tới FastWork thông qua FastWork API
+                    </p>
+                  </div>
+                </section>
+                <section id="card1" class="card__reason">
+                  <div
+                    class="flex"
+                    style="flex-direction: column; padding: 10px 20px"
+                  >
+                    <img src="./Reason/tichhop.png" alt="" />
+                    <p class="font-bold text-20" style="margin-top: 10px">
+                      Khả năng tích hợp
+                    </p>
+                  </div>
+
+                  <div class="card__reason__content">
+                    <p class="card__reason__title">
+                      Khả năng tích hợp và mở rộng không giới hạn
+                    </p>
+                    <p class="card__reason__description">
+                      WorkFlow API cho phép các nền tảng, hệ thống khác kết nối
+                      tới FastWork thông qua FastWork API
+                    </p>
+                  </div>
+                </section>
+                <section id="card1" class="card__reason">
+                  <div
+                    class="flex"
+                    style="flex-direction: column; padding: 10px 20px"
+                  >
+                    <img src="./Reason/tichhop.png" alt="" />
+                    <p class="font-bold text-20" style="margin-top: 10px">
+                      Khả năng tích hợp
+                    </p>
+                  </div>
+
+                  <div class="card__reason__content">
+                    <p class="card__reason__title">
+                      Khả năng tích hợp và mở rộng không giới hạn
+                    </p>
+                    <p class="card__reason__description">
+                      WorkFlow API cho phép các nền tảng, hệ thống khác kết nối
+                      tới FastWork thông qua FastWork API
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Why us -->
+      <!-- Business -->
+      <div class="business container flex">
+        <div class="number flex">
+          <p class="font-bold">Hơn 3500+</p>
+          <p class="text-20">
+            Doanh nghiệp <span class="font-semibold">Việt Nam</span>
+          </p>
+          <p class="text-20">
+            Thuộc mọi lĩnh vực tin tưởng và sử dụng
+            <span class="font-semibold">WorkFlow</span>
+          </p>
+        </div>
+        <div class="all_business flex">
+          <div>
+            <img src="./Business/vnpost.png" alt="" />
+          </div>
+          <div>
+            <img src="./Business/vnpost.png" alt="" />
+          </div>
+          <div>
+            <img src="./Business/vnpost.png" alt="" />
+          </div>
+          <div>
+            <img src="./Business/vnpost.png" alt="" />
+          </div>
+          <div>
+            <img src="./Business/vnpost.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- End Business -->
+      <!-- User Story -->
+      <div class="us_main">
+        <div class="user__story container flex">
+          <div class="us__left">
+            <p class="text-30 font-semibold">Câu chuyện khách hàng</p>
+            <p class="text-20">
+              Những doanh nghiệp đã tin tưởng đồng hành và ứng dụng thành công
+              phần mềm WorkFlow
+            </p>
+            <div>
+              <button class="hv__button">
+                Xem chi tiết
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="us__right flex">
+            <div class="user">
+              <div class="user__card-container">
+                <div class="user__card">
+                  <div class="user__front-content">
+                    <img src="./User/CMC.png" alt="" />
+                    <p>Anh Phạm Thái</p>
+                    <p style="color: rgb(196, 189, 189)">
+                      Trưởng phòng HTKT Tập đoàn Viễn thông CMC
+                    </p>
+                  </div>
+                  <div class="content">
+                    <!-- <p class="heading">Card Hover</p> -->
+                    <p>
+                      Không chỉ giúp CMC nâng cao chất lượng dịch vụ khách hàng,
+                      kiểm soát tốt hiệu suất làm việc của đội ngũ kỹ thuật
+                      viên, FastWork còn giúp CMC xây dựng môi trường làm việc
+                      mở, tích cực và công nghệ!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="user">
+              <div class="user__card-container">
+                <div class="user__card">
+                  <div class="user__front-content">
+                    <img src="./User/CMC.png" alt="" />
+                    <p>Anh Phạm Thái</p>
+                    <p style="color: rgb(196, 189, 189)">
+                      Trưởng phòng HTKT Tập đoàn Viễn thông CMC
+                    </p>
+                  </div>
+                  <div class="content">
+                    <!-- <p class="heading">Card Hover</p> -->
+                    <p>
+                      Không chỉ giúp CMC nâng cao chất lượng dịch vụ khách hàng,
+                      kiểm soát tốt hiệu suất làm việc của đội ngũ kỹ thuật
+                      viên, FastWork còn giúp CMC xây dựng môi trường làm việc
+                      mở, tích cực và công nghệ!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="user">
+              <div class="user__card-container">
+                <div class="user__card">
+                  <div class="user__front-content">
+                    <img src="./User/CMC.png" alt="" />
+                    <p>Anh Phạm Thái</p>
+                    <p style="color: rgb(196, 189, 189)">
+                      Trưởng phòng HTKT Tập đoàn Viễn thông CMC
+                    </p>
+                  </div>
+                  <div class="content">
+                    <!-- <p class="heading">Card Hover</p> -->
+                    <p>
+                      Không chỉ giúp CMC nâng cao chất lượng dịch vụ khách hàng,
+                      kiểm soát tốt hiệu suất làm việc của đội ngũ kỹ thuật
+                      viên, FastWork còn giúp CMC xây dựng môi trường làm việc
+                      mở, tích cực và công nghệ!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End User Story -->
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="footer flex container">
+        <div>
+          <img src="../../Header/assets/logo.png" alt="" />
+          <p>Công ty TNHH công nghệ WorkFlow Việt Nam</p>
+          <p>
+            <span class="font-semibold">Trụ sở chính:</span> 120 Hoàng Minh
+            Thảo, P. Hòa Khánh Nam, Q. Liên Chiểu,TP. Đà Nẵng
+          </p>
+          <p>
+            <span class="font-semibold">Chi nhánh Miền Nam:</span> Tầng 6, Tòa
+            A, Số 140 B, Phường 2, Quận Tân Bình, Tp. Hồ Chí Minh
+          </p>
+        </div>
+        <div>
+          <p class="font-semibold" style="color: #1abc9c">Liên kết hữu ích</p>
+          <p>Giới thiệu về WorkFlow</p>
+          <p>Thoả thuận sử dụng</p>
+          <p>Chính sách bảo hành</p>
+          <p>Chính sách bảo mật thông tin</p>
+          <p>Chương trình đối tác</p>
+          <p>Tuyển dụng nhân sự</p>
+          <p>Trung tâm hỗ trợ</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </body>
+</html>
